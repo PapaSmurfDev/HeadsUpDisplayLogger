@@ -1,0 +1,6 @@
+local currentDir = fs.getDir(shell.getRunningProgram())
+local parentDir = fs.getDir(currentDir)
+shell.setDir(parentDir)
+shell.run("github clone PapaSmurfDev/AR_Multiplayer_CC")
+shell.setDir(currentDir)
+print("Run overlayTest.lua to start the AR experience!")
