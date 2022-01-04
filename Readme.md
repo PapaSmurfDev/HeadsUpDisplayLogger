@@ -1,4 +1,4 @@
-# AR_Multiplayer_CC made by PapaNicSmurf
+# HeadsUpDisplayLogger made by PapaNicSmurf
 
 A bunch of personal CC:Tweaked + Plethora scripts tested on SwitchCraft
 
@@ -23,11 +23,11 @@ alias git github
 ### 2. Clone the repository
 
 ```sh
-git clone PapaSmurfDev/AR_Multiplayer_CC
+git clone PapaSmurfDev/HeadsUpDisplayLogger
 
 ```
 
-This will clone the whole repo into a AR_Multiplayer_CC directory.
+This will clone the whole repo into a HeadsUpDisplayLogger directory.
 
 ### 3. Update the repo
 
@@ -43,13 +43,14 @@ pull
 
 This script is an updater, it auto clones the repo onto itself using the github script aforementioned.
 
-### Basic Controls
-
-- C : Place blocks
-- X : Remove blocks
-- B : Exit program
+### Basic Usage
+Add the following:
+- local DisplayLogger = required("displayLogger")
+- DisplayLogger.transmitChannel = <Any Acceptable Modem Channel>
+- DisplayLogger.logFile = <Any Log file name you want>
+Print it anywhere with:
+- DisplayLogger.log(<Log Information>)
 
 
 #### Required Modules to start:
-* Keyboard
 * Overlay Glasses
