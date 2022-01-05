@@ -1,3 +1,5 @@
+#HeadsUpDisplayLogger/displayLogger
+
 local modem = peripheral.find("modem")
 local modules
 local canvas
@@ -15,7 +17,7 @@ DisplayLogger.transmitChannel = -1
 DisplayLogger.logFile = ""
 -- This is for the Neural Interface
 DisplayLogger.isReceiver = false
-DisplayLogger.signature
+DisplayLogger.signature = ""
 
 function DisplayLogger.initiate(isReceiver, channel, 
 	logFile, signature)
