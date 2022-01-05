@@ -80,7 +80,7 @@ function DisplayLogger.listenDevice()
 			if msg["signature"] == DisplayLogger.signature and msg["channel"] == DisplayLogger.transmitChannel then
 				if not TextCanvas.isPause then
 					if #cachedReceivedLines > 0 then
-						for i,v in ipair(cachedReceivedLines) do
+						for i,v in ipairs(cachedReceivedLines) do
 							addLine(v)
 						end
 						receivedPauseLines = {}
