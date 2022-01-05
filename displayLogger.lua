@@ -80,7 +80,7 @@ function DisplayLogger.listenDevice(event, key_side, msg)
 						for i,v in ipairs(cachedReceivedLines) do
 							addLine(v)
 						end
-						receivedPauseLines = {}
+						cachedReceivedLines = {}
 					end
 					addLine(msg["obj"]["msg"])
 				else
