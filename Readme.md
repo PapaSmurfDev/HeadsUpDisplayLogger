@@ -49,7 +49,7 @@ isReceiver: false - Represents the machine logging
 Add the following:
 - local DisplayLogger = required("displayLogger")
 - DisplayLogger.initiate(isReceiver<true/false>, <Any Acceptable Modem Channel>, <Any Log file name you want>,
-<Message Signature>)
+<Message Signature to >)
 Print it anywhere with:
 ##### Only for the logged machine
 - DisplayLogger.log(<Log Information>)
