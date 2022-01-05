@@ -44,11 +44,14 @@ pull
 This script is an updater, it auto clones the repo onto itself using the github script aforementioned.
 
 ### Basic Usage
+isReceiver: true - Represents the Neural interface receiving signal
+isReceiver: false - Represents the machine logging
 Add the following:
 - local DisplayLogger = required("displayLogger")
-- DisplayLogger.transmitChannel = <Any Acceptable Modem Channel>
-- DisplayLogger.logFile = <Any Log file name you want>
+- DisplayLogger.initiate(isReceiver<true/false>, <Any Acceptable Modem Channel>, <Any Log file name you want>,
+<Message Signature>)
 Print it anywhere with:
+##### Only for the logged machine
 - DisplayLogger.log(<Log Information>)
 
 
