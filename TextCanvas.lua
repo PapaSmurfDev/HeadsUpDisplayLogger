@@ -100,26 +100,4 @@ function TextCanvas.scroll(direction)
   end
 end
 
-
--- term.clear()
--- term.setCursorPos(1,1)
--- local numb = 1
--- while true do
---   local event, key, is_held = os.pullEvent()
---   if event == "key" and key == keys.m then
---     canvas.clear()
---     os.pullEvent()
---     break
---   elseif event == "key" and key == keys.h and not isPause then
---     addLine("Hi "..numb)
---     numb = numb + 1
---   elseif event == "key" and key == keys.i then
---     scroll(-1)
---   elseif event == "key" and key == keys.k then
---     scroll(1)
---   elseif event == "key" and key == keys.p then
---     toggleIsPause()
---   end
--- end
-
 return TextCanvas

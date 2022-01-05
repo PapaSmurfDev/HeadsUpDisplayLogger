@@ -67,9 +67,9 @@ function DisplayLogger.listenDevice()
 				canvas.clear()
 				os.pullEvent()
 				running = false
-			elseif event == "key" and key == keys.i then
+			elseif key_side == keys.i then
 		    TextCanvas.scroll(-1)
-	  	elseif event == "key" and key == keys.k then
+	  	elseif key_side == keys.k then
 	    	TextCanvas.scroll(1)
 			elseif key_side == keys.p then
 				TextCanvas.toggleIsPause()
