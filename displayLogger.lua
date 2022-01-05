@@ -5,10 +5,7 @@ local modules
 local canvas
 local TextCanvas
 if modem == nil then
-  wireless = false
   error("Can't open modem")
-else
-  wireless = true
 end
 
 DisplayLogger = {}
@@ -18,12 +15,10 @@ DisplayLogger.logFile = ""
 -- This is for the Neural Interface
 DisplayLogger.isReceiver = false
 DisplayLogger.signature = ""
-isReceiver = false
 
-function DisplayLogger.initiate(isReceiver, channel, 
-	logFile, signature)
-	DisplayLogger.signature = signature
-	DisplayLogger.isReceiver = isReceiver
+function DisplayLogger.initiate(intiatiateTbl)
+	DisplayLogger.signature = intiatiateTbl["signature"]
+	DisplayLogger.isReceiver = intiatiateTbl["isReceiver"]
 	print("Receiver:",DisplayLogger.isReceiver)
 	if DisplayLogger.isReceiver then
 		TextCanvas = require('HeadsUpDisplayLogger/TextCanvas')
@@ -38,9 +33,9 @@ function DisplayLogger.initiate(isReceiver, channel,
 		end
 		canvas = modules.canvas()
 	end
-	DisplayLogger.transmitChannel = channel
-	DisplayLogger.logFile = logFile
-	return modem.open(transmitChannel)
+	DisplayLogger.transmitChannel = intiatiateTbl["channel"]
+	DisplayLogger.logFile = intiatiateTbl["logFile"]
+	return modem.open(DisplayLogger.transmitChannel)
 end
 
 function DisplayLogger.sendData(msg)
