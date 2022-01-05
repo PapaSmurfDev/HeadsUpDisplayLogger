@@ -60,15 +60,15 @@ end
 
 local cachedReceivedLines = {}
 
+function DisplayLogger.clearCanvas()
+	canvas.clear()
+end
+
 function DisplayLogger.listenDevice(event, key_side, msg)
 		if event == "key" then
-			if key_side == keys.x then
-				canvas.clear()
-				os.pullEvent()
-				return false
-			elseif key_side == keys.i then
+			if key_side == keys.up then
 		    TextCanvas.scroll(-1)
-	  	elseif key_side == keys.k then
+	  	elseif key_side == keys.down then
 	    	TextCanvas.scroll(1)
 			elseif key_side == keys.p then
 				TextCanvas.toggleIsPause()
@@ -88,7 +88,6 @@ function DisplayLogger.listenDevice(event, key_side, msg)
 				end
 			end
 		end
-		return true
 end
 
 return DisplayLogger
