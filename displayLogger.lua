@@ -23,6 +23,7 @@ function DisplayLogger.initiate(isReceiver, channel,
 	logFile, signature)
 	DisplayLogger.signature = signature
 	DisplayLogger.isReceiver = isReceiver
+	print("Receiver:",DisplayLogger.isReceiver)
 	if DisplayLogger.isReceiver then
 		TextCanvas = require('HeadsUpDisplayLogger/TextCanvas')
 	end
