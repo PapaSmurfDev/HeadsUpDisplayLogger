@@ -24,7 +24,7 @@ function DisplayLogger.initiate(isReceiver, channel,
 	DisplayLogger.signature = signature
 	DisplayLogger.isReceiver = isReceiver
 	if DisplayLogger.isReceiver then
-		TextCanvas = required('TextCanvas')
+		TextCanvas = require('TextCanvas')
 	end
 	if DisplayLogger.isReceiver then
 		modules = peripheral.find("neuralInterface")
