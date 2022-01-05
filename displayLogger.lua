@@ -51,7 +51,7 @@ function DisplayLogger.sendData(msg)
 end
 
 function addLine(msg)
-	if not canvas then
+	if canvas then
 		TextCanvas.addLine(msg)
 	else
 		print("canvas not found")
