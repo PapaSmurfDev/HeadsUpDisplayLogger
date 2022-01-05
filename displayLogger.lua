@@ -58,6 +58,8 @@ function addLine(msg)
 	end
 end
 
+local cachedReceivedLines = {}
+
 function DisplayLogger.listenDevice()
 	local running = true
 	while running do
@@ -77,7 +79,15 @@ function DisplayLogger.listenDevice()
 		elseif event == "modem_message" then
 			if msg["signature"] == DisplayLogger.signature and msg["channel"] == DisplayLogger.transmitChannel then
 				if not TextCanvas.isPause then
+					if cachedReceivedLines.length then
+						for i,v in ipair(cachedReceivedLines) do
+							addLine(v)
+						end
+						receivedPauseLines = {}
+					end
 					addLine(msg["obj"]["msg"])
+				else
+					table.insert(cachedReceivedLines, msg["obj"]["msg"])
 				end
 			end
 		end
