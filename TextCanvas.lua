@@ -1,7 +1,9 @@
 TextCanvas = {}
 
-modules = peripheral.find("neuralInterface")
-if not modules.hasModule("plethora:glasses") then error("The overlay glasses are missing", 0) end
+TextCanvas.modules = peripheral.find("neuralInterface")
+if not TextCanvas.modules.hasModule("plethora:glasses") then 
+  error("The overlay glasses are missing", 0) 
+end
 
 local canvas = modules.canvas()
 
