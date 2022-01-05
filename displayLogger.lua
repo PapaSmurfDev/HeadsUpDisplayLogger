@@ -18,6 +18,7 @@ DisplayLogger.logFile = ""
 -- This is for the Neural Interface
 DisplayLogger.isReceiver = false
 DisplayLogger.signature = ""
+isReceiver = false
 
 function DisplayLogger.initiate(isReceiver, channel, 
 	logFile, signature)
