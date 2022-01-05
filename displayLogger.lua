@@ -63,21 +63,6 @@ function DisplayLogger.listenDevice()
 	while running do
 		local event, key_side, held_ch, rch, msg, dist = os.pullEvent()
 		if event == "key" then
-			if event == "key" and key == keys.m then
---     canvas.clear()
---     os.pullEvent()
---     break
---   elseif event == "key" and key == keys.h and not isPause then
---     addLine("Hi "..numb)
---     numb = numb + 1
---   elseif event == "key" and key == keys.i then
---     scroll(-1)
---   elseif event == "key" and key == keys.k then
---     scroll(1)
---   elseif event == "key" and key == keys.p then
---     toggleIsPause()
---   end
--- end
 			if key_side == keys.x then
 				canvas.clear()
 				os.pullEvent()
