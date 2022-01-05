@@ -22,7 +22,7 @@ local scrollDist = 0
 
 local displayGroup = canvas.addGroup({0,0})
 
-local isPause = false
+TextCanvas.isPause = false
 
 displayGroup.addRectangle(headsUp_xStartPos,
 0, headsupWidth, headsupHeight+textHeight, headsupBg)
@@ -61,9 +61,9 @@ local function resetScroll()
   end
 end
 
-local function toggleIsPause()
-  isPause = not isPause
-  if isPause then
+function TextCanvas.toggleIsPause()
+  TextCanvas.isPause = not TextCanvas.isPause
+  if TextCanvas.isPause then
     isPauseText.setText("Pause")
   else
     isPauseText.setText("")
@@ -90,7 +90,7 @@ function TextCanvas.addLine(str)
   table.insert(textBoxData, textData)
 end
 
-local function scroll(direction)
+function TextCanvas.scroll(direction)
   textGroup_yPos = textGroup_yPos + direction*textHeight
   textGroup.setPosition(headsUp_xStartPos+5, textGroup_yPos)
   scrollDist = scrollDist + direction
