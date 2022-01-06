@@ -47,6 +47,8 @@ This script is an updater, it auto clones the repo onto itself using the github 
 
 isReceiver: true - Represents the Neural interface receiving signal
 isReceiver: false - Represents the machine logging
+signature: Is basically your password to prevent people from invading your channel
+logFile: WIP
 
 Add the following:
 #### For the Neural Interface with overlay glasses:
@@ -75,7 +77,7 @@ Add the following:
 >
 >  ["signature"] = "12345",
 >  
->  ["isReceiver"] = true,
+>  ["isReceiver"] = false,
 >  
 >  ["channel"] = 1000,
 >  
