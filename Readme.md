@@ -29,6 +29,7 @@ git clone PapaSmurfDev/HeadsUpDisplayLogger
 
 This will clone the whole repo into a HeadsUpDisplayLogger directory.
 
+
 ### 3. Update the repo
 
 While being in the repository directory, use the pull script to update it
@@ -42,6 +43,8 @@ pull
 ### pull -- updater
 
 This script is an updater, it auto clones the repo onto itself using the github script aforementioned.
+
+ ![CanvasImageSample](https://user-images.githubusercontent.com/96831364/148418078-658899e3-258e-439b-bc76-938678f78b20.png)
 
 ### Basic Usage
 
