@@ -11,7 +11,7 @@ Note: This assumes the repo is cloned on the root of your computer, please chang
 this will add the github program and it's rom to the computer
 
 ```sh
-pastebin run p8PJVxC4
+pastebin run MqMXLCdf
 ```
 
 I also have the habit to alias github as git as such:
@@ -44,16 +44,55 @@ pull
 This script is an updater, it auto clones the repo onto itself using the github script aforementioned.
 
 ### Basic Usage
+
 isReceiver: true - Represents the Neural interface receiving signal
 isReceiver: false - Represents the machine logging
+
 Add the following:
-- local DisplayLogger = required("displayLogger")
-- DisplayLogger.initiate(isReceiver<true/false>, <Any Acceptable Modem Channel>, <Any Log file name you want>,
-<Message Signature to >)
-Print it anywhere with:
-##### Only for the logged machine
-- DisplayLogger.log(<Log Information>)
+#### For the Neural Interface with overlay glasses:
 
+>local DisplayLogger = require("HeadsUpDisplayLogger/displayLogger")
+>
+>local initiateTbl = {
+>
+>  ["signature"] = "12345",
+>  
+>  ["isReceiver"] = true,
+>  
+>  ["channel"] = 1000,
+>  
+>  ["logFile"] = "testLog.txt"
+>  
+>}
+>
+>DisplayLogger.initiate(initiateTbl)
 
+#### For the machine you want to log and send the information:
+
+>local DisplayLogger = require("HeadsUpDisplayLogger/displayLogger")
+>
+>local initiateTbl = {
+>
+>  ["signature"] = "12345",
+>  
+>  ["isReceiver"] = true,
+>  
+>  ["channel"] = 1000,
+>  
+>  ["logFile"] = "testLog.txt"
+>  
+>}
+>
+>DisplayLogger.initiate(initiateTbl)
+
+#### Wherever you need to send data to your glasses
+>DisplayLogger.sendData("Insert your own info here")
+
+ #### You can control your glasses log with:
+ - Up Arrow: Scroll up
+ - Down Arror: Scroll down
+ - P: Pause the incoming data, do not worry about future data sent, when you unpaused, they will appear
+  
 #### Required Modules to start:
 * Overlay Glasses
+* Keyboard
